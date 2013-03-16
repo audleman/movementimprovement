@@ -1,0 +1,3 @@
+[submodule "submodules/south"]
+	path = submodules/south
+	url = git://github.com/dmishe/django-south.git
