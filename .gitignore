@@ -1,6 +1,0 @@
-*.sqlite3 
-*.sqlite3-journal 
-*.pyc 
-.DS_Store
-static/*
-
