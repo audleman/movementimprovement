@@ -1,6 +1,10 @@
 import os
 
+
 BASE_PATH = os.path.abspath(__file__)
+PROJECT_PATH = BASE_PATH
+for i in range(2):
+    PROJECT_PATH = os.path.dirname(PROJECT_PATH)
 for i in range(4):
     BASE_PATH = os.path.dirname(BASE_PATH)
 
@@ -72,6 +76,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -111,6 +116,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'templates'),
 )
 
 INSTALLED_APPS = (
