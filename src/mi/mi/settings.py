@@ -1,10 +1,9 @@
 import os
 
-
 BASE_PATH = os.path.abspath(__file__)
-PROJECT_PATH = BASE_PATH
+PROJECT_ROOT = BASE_PATH
 for i in range(2):
-    PROJECT_PATH = os.path.dirname(PROJECT_PATH)
+    PROJECT_ROOT = os.path.dirname(PROJECT_ROOT)
 for i in range(4):
     BASE_PATH = os.path.dirname(BASE_PATH)
 
@@ -76,7 +75,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, 'static'),
+    os.path.join(PROJECT_ROOT, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -116,7 +115,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_PATH, 'templates'),
+    os.path.join(PROJECT_ROOT, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -127,9 +126,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
-    'south'
-    # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'south',
+    # Project apps
+    'common',
+    'classes',
+    'payments',
+    'people',
 )
 
 # A sample logging configuration. The only tangible logging

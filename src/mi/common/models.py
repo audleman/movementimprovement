@@ -7,6 +7,9 @@ class BaseModel(models.Model):
     added = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        abstract = True
+
 
 class Address(models.Model):
 
