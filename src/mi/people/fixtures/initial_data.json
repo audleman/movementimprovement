@@ -1,0 +1,36 @@
+[
+    {
+        "pk": 1, 
+        "model": "people.person", 
+        "fields": {
+            "city": "", 
+            "first_name": "Elizabeth", 
+            "added": "2013-03-16T04:57:26.602Z", 
+            "address1": "", 
+            "address2": "", 
+            "modified": "2013-03-16T04:57:26.602Z", 
+            "zipcode": "", 
+            "phone": "", 
+            "state": "", 
+            "last_name": "Turner", 
+            "email": "lizturner10@gmail.com"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "people.person", 
+        "fields": {
+            "city": "", 
+            "first_name": "John", 
+            "added": "2013-03-16T04:57:51.374Z", 
+            "address1": "", 
+            "address2": "", 
+            "modified": "2013-03-16T04:57:51.374Z", 
+            "zipcode": "", 
+            "phone": "", 
+            "state": "", 
+            "last_name": "Kenning", 
+            "email": "johnkenning@comcast.net"
+        }
+    }
+]

@@ -4,7 +4,7 @@ import sys
 
 # setup environment first
 BASE_PATH = os.path.abspath(__file__)
-for i in range(4):
+for i in range(3):
     BASE_PATH = os.path.dirname(BASE_PATH)
 sys.path.insert(0, os.path.join(BASE_PATH, 'lib'))
 sys.path.insert(0, os.path.join(BASE_PATH, 'src', 'mi'))

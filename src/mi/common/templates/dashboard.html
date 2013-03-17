@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load staticfiles jstemplate %}
+{% block js %}
+
+    {# Backbone required variables #}
+    <script type="text/javascript">
+       
+        var personBackboneUrl = "{% url backbone:people_person %}";
+        var atmclassBackboneUrl = "{% url backbone:classes_atmclass %}";
+        var locationBackboneUrl = "{% url backbone:classes_location %}";
+    </script>
+
+    {# Templates #}
+    {% mustachejs "person" %}
+    {% mustachejs "atmclass" %}
+
+    {# Backbone Includes #}
+    <script type="text/javascript" src="{% static 'backbone/people.js' %}"></script>
+    <script type="text/javascript" src="{% static 'backbone/classes.js' %}"></script>
+
+    {# Page logic #}
+    <script type="text/javascript">
+        var people = null;
+        var atmClasses = null;
+        var locations = null;
+
+        $(document).ready(function() {
+
+            people = new PersonCollection();
+            people.fetch({success: function(){
+                    peopleView = new PeopleView({el: '#people-container',
+                            collection: people});
+                }
+            });
+
+            locations = new LocationCollection();
+            locations.fetch({success: function(){
+                    atmClasses = new ATMClassCollection();
+                    atmClasses.fetch({success: function(){
+                            atmClassesView = new ATMClassesView({
+                                    el: '#classes-container',
+                                    collection: atmClasses
+                            });
+                        }
+                    });
+                }
+            });
+
+            $("#people-column .action-icon-add").click(function(){
+                var p = new Person();
+                peopleView.addItem(p);
+            });
+
+            $("#classes-column .action-icon-add").click(function(){
+                var c = new ATMClass();
+                atmClassesView.addItem(c);
+            })
+        });
+    </script>
+{% endblock %}
+{% block content %}
+    <div class="row-fluid show-grid">
+        <div class="span6" id="people-column">
+            <div class="action-icon-add" ></div>
+            <h2>People</h2>
+            <div id="people-container">
+            </div>
+        </div>
+        <div class="span6" id="classes-column">
+            <div class="action-icon-add" ></div>
+            <h2>Classes</h2>
+            <div id="classes-container">
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

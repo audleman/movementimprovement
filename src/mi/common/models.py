@@ -13,11 +13,11 @@ class BaseModel(models.Model):
 
 class Address(models.Model):
 
-    address1 = models.CharField(max_length=100)
+    address1 = models.CharField(max_length=100, blank=True)
     address2 = models.CharField(max_length=100, blank=True)
-    city = models.CharField(max_length=100)
-    state = USStateField()
-    zipcode = models.CharField(max_length=100)
+    city = models.CharField(max_length=100, blank=True)
+    state = USStateField(blank=True)
+    zipcode = models.CharField(max_length=100, blank=True)
 
     class Meta:
         abstract = True

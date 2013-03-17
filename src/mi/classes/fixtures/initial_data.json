@@ -1,0 +1,16 @@
+[
+    {
+        "pk": 1, 
+        "model": "classes.location", 
+        "fields": {
+            "city": "", 
+            "added": "2013-03-16T06:54:32.094Z", 
+            "name": "Bodhi Center", 
+            "address1": "", 
+            "address2": "", 
+            "modified": "2013-03-16T06:54:32.094Z", 
+            "zipcode": "", 
+            "state": ""
+        }
+    }
+]

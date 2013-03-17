@@ -6,7 +6,7 @@ from common.models import Address
 class ATMClass(BaseModel):
     """ One class that I taught """
     location = models.ForeignKey('classes.Location')
-    series = models.ForeignKey('classes.ATMSeries')
+    series = models.ForeignKey('classes.ATMSeries', blank=True, null=True)
     date = models.DateField()
     time = models.TimeField()
 
@@ -22,6 +22,9 @@ class ATMSeries(BaseModel):
 class Location(BaseModel, Address):
     """ Studio, apartment, wherever I teach a class """
     name = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Attendance(BaseModel):

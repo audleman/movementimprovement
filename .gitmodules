@@ -1,3 +1,9 @@
 [submodule "submodules/south"]
 	path = submodules/south
 	url = git://github.com/dmishe/django-south.git
+[submodule "submodules/django-backbone"]
+	path = submodules/django-backbone
+	url = git://github.com/zmathew/django-backbone.git
+[submodule "submodules/django-jstemplate"]
+	path = submodules/django-jstemplate
+	url = git://github.com/mjumbewu/django-jstemplate.git

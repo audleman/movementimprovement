@@ -1,0 +1,112 @@
+body {
+    padding-top: 60px;
+}
+
+.show-grid [class*="span"] {
+    background-color: #eee;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+td.button-row {
+    padding-right: 13px;
+}
+
+.button-row button {
+    float: right;
+    margin-left: 7px;
+}
+
+#people-column,
+#classes-column {
+    padding: 0px 20px 40px 20px;
+}
+
+#people-container {
+    padding-left: 40px;
+}
+
+.model {
+    margin-bottom: 10px;
+}
+
+.person,
+.person .person-header {
+    width: 200px;
+}
+
+.person.open,
+.person.open .person-header {
+    width: 306px;
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+.atm-class,
+.atm-class .atm-class-header {
+    width: 300px;
+}
+
+.atm-class.open,
+.atm-class.open .atm-class-header {
+    width: 500px;
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+
+.table {
+    margin-bottom: 5px;
+}
+
+form {
+    margin-bottom: 5px;
+}
+
+.model-info {
+    display: none;
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-size: 0.8em;
+}
+
+.model.open .model-info {
+    display: block;
+}
+
+.atm-class {
+    width: 250px;
+    margin-bottom: 8px;
+}
+
+.hovered .btn {
+    background: #a0d88c;
+}
+
+.action-icon-add {
+    width: 32px;
+    height: 32px;
+    background-image: url('../icons/Defaulticon/png/32x32/add.png');
+    margin-top: 15px;
+    float: right;
+}
+
+.atm-class .date {
+    color: #d9e7d9;
+}
+
+.action-icon-add:hover {
+    opacity: .5;
+}
+
+.condensed-form input {
+    margin-bottom: 0px;
+    height: 15px;
+}
+
+.error {
+    color: red;
+}

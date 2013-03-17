@@ -4,11 +4,28 @@
         <title>Movement Improvement CRM</title>
 
         <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap-responsive.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'css/common.css' %}" type="text/css" />
+        {% block css %}{% endblock %}
         <script type="text/javascript" src="{% static 'js/jquery-1.8.1.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/jquery-ui-1.8.23.custom.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/underscore.js' %}"></script>
         <script type="text/javascript" src="{% static 'js/backbone.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/mustache.js' %}"></script>
+        <script type="text/javascript" src="{% static 'libs/django.mustache.js' %}"></script>
+        <script>
+            // (Optional) Do this if you are using csrf protection:
+            // See: https://docs.djangoproject.com/en/dev/ref/contrib/csrf/
+            var oldSync = Backbone.sync;
+            Backbone.sync = function(method, model, options) {
+                options.beforeSend = function(xhr){
+                    xhr.setRequestHeader('X-CSRFToken', '{{ csrf_token }}');
+                };
+                return oldSync(method, model, options);
+            };
+        </script>
+        {% block js %}{% endblock %}
     </head>
     <body>
 
@@ -20,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">CRM</a>
+          <a class="brand" href="#">WigglyCRM</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="#">Home</a></li>

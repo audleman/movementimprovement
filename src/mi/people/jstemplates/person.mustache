@@ -1,0 +1,29 @@
+<div class="person model">
+    <div class="btn btn-block btn-info person-header model-header" type="button" id="person{{ id }}">
+        <i class="icon-user icon-white"></i>
+        <span class="name">
+            {{ first_name }} {{ last_name }}
+        </span>
+    </div>
+    <div class="person-info model-info">
+        <form action="backbone/people/person/{{ id }}" class="condensed-form">
+            <table class="table table-condensed">
+                {{ #formFields }}
+                <tr>
+                    <th>{{ label }}</th>
+                    <td>
+                        <div class="error" id="{{ field }}-errors"></div>
+                        <input type="text" name="{{ field }}" value="{{ data }}" />
+                    </td>
+                </tr>
+                {{/formFields}}
+                <tr>
+                    <td colspan="2" class="button-row">                        
+                        <button class="btn btn-mini btn-success save">Save</button>
+                        <button class="btn btn-mini cancel">Cancel</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

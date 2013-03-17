@@ -126,7 +126,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    # Submodules
     'south',
+    'backbone',
+    'jstemplate',
     # Project apps
     'common',
     'classes',
